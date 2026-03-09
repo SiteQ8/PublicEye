@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PublicEye — Open Source Intelligence Framework</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23f0a500'/><text x='8' y='12' text-anchor='middle' font-size='9' fill='%230a0e14' font-weight='bold'>PE</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0e14;--bg2:#111922;--surface:#151d28;--text:#c8d6e5;--text2:#7a8ea0;--text3:#4a5d70;--accent:#f0a500;--accent2:#ffc940;--cyan:#00d4ff;--red:#ff4757;--green:#2ed573;--border:#1e2d3e;--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',system-ui,sans-serif}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 24px;display:flex;align-items:center;justify-content:space-between}
+.topbar-brand{font-family:var(--mono);font-size:0.92rem;font-weight:700;color:var(--accent)}
+.topbar-brand span{color:var(--text3);font-weight:400;font-size:0.72rem;margin-left:6px}
+.topbar-links{display:flex;gap:16px;font-size:0.78rem}
+.topbar-links a{color:var(--text2);text-decoration:none}.topbar-links a:hover{color:var(--accent)}
+
+.hero{padding:60px 0 48px;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-family:var(--mono);font-size:2.8rem;font-weight:700;color:var(--accent);letter-spacing:-1.5px;margin-bottom:8px}
+.hero-sub{font-size:1rem;color:var(--text2);max-width:660px;margin:0 auto 20px;line-height:1.7}
+.hero-tags{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.htag{padding:4px 12px;border-radius:4px;font-family:var(--mono);font-size:0.68rem;font-weight:600;color:var(--accent);border:1px solid #f0a50030;background:#f0a50008}
+.hero-actions{display:flex;gap:10px;justify-content:center}
+.btn{padding:10px 24px;border-radius:6px;font-family:var(--mono);font-size:0.82rem;font-weight:600;cursor:pointer;text-decoration:none;border:none;transition:all .15s}
+.btn-p{background:var(--accent);color:#000}.btn-p:hover{background:var(--accent2)}
+.btn-s{background:var(--bg2);border:1px solid var(--border);color:var(--text2)}.btn-s:hover{border-color:var(--accent);color:var(--accent)}
+
+.terminal{background:#050810;border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:740px;margin:48px auto}
+.terminal-bar{background:var(--bg2);padding:8px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border)}
+.terminal-dot{width:10px;height:10px;border-radius:50%}
+.terminal-body{padding:18px;font-family:var(--mono);font-size:0.72rem;line-height:1.85;color:var(--text2);overflow-x:auto;white-space:pre}
+.ta{color:var(--accent)}.tg{color:var(--green)}.tr{color:var(--red)}.tc{color:var(--cyan)}.tw{color:var(--text);font-weight:600}
+
+.section{padding:48px 0;border-bottom:1px solid var(--border)}
+.section:last-of-type{border-bottom:none}
+.section-label{font-family:var(--mono);font-size:0.7rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.section-title{font-size:1.3rem;font-weight:600;margin-bottom:8px}
+.section-desc{font-size:0.9rem;color:var(--text2);line-height:1.7;max-width:640px;margin-bottom:24px}
+
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+.mod{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;transition:border-color .15s;display:flex;gap:12px}
+.mod:hover{border-color:var(--accent)}
+.mod-num{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.72rem;font-weight:700;background:#f0a50010;color:var(--accent);border:1px solid #f0a50020;flex-shrink:0}
+.mod-content{flex:1}.mod-name{font-weight:600;font-size:0.88rem;margin-bottom:2px}
+.mod-desc{font-size:0.78rem;color:var(--text2);line-height:1.6}
+.mod-meta{display:flex;gap:6px;margin-top:8px}
+.mod-tag{padding:2px 8px;border-radius:3px;font-family:var(--mono);font-size:0.6rem;background:var(--bg);color:var(--text3);border:1px solid var(--border)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:48px 0 0}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 16px;text-align:center}
+.stat-num{font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:0.72rem;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px}
+
+.code{background:#050810;border:1px solid var(--border);border-radius:8px;padding:20px;font-family:var(--mono);font-size:0.78rem;color:var(--text2);line-height:1.9;overflow-x:auto}
+.code .c{color:var(--text3)}.code .k{color:var(--accent)}
+
+.tbl-wrap{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:0.82rem}
+th{text-align:left;padding:12px 14px;font-family:var(--mono);font-size:0.68rem;color:var(--accent);border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.5px;background:var(--bg2)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text2)}
+tr:last-child td{border-bottom:none}
+
+.footer{text-align:center;padding:40px 16px;font-size:0.75rem;color:var(--text3);border-top:1px solid var(--border)}
+.footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="topbar">
+    <div class="topbar-brand">PublicEye <span>v2.0</span></div>
+    <div class="topbar-links">
+        <a href="https://github.com/SiteQ8/PublicEye">Source Code</a>
+        <a href="https://github.com/SiteQ8/PublicEye/issues">Issues</a>
+        <a href="https://github.com/SiteQ8/PublicEye/discussions">Discussions</a>
+    </div>
+</div>
+<div class="container">
+    <div class="hero">
+        <h1>PublicEye</h1>
+        <div class="hero-sub">Enterprise-grade Open Source Intelligence framework built for security professionals. 8 modules, multi-format reporting, zero cloud dependencies. Deploy on your own infrastructure.</div>
+        <div class="hero-tags">
+            <span class="htag">Domain Recon</span>
+            <span class="htag">SSL/TLS Analysis</span>
+            <span class="htag">Subdomain Enum</span>
+            <span class="htag">IP Intelligence</span>
+            <span class="htag">Email OSINT</span>
+            <span class="htag">Tech Fingerprint</span>
+            <span class="htag">Port Scanner</span>
+            <span class="htag">Social Discovery</span>
+        </div>
+        <div class="hero-actions">
+            <a class="btn btn-p" href="https://github.com/SiteQ8/PublicEye">View Repository</a>
+            <a class="btn btn-s" href="https://raw.githubusercontent.com/SiteQ8/PublicEye/main/publiceye.py">Download Script</a>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-bar">
+            <div class="terminal-dot" style="background:#ff5f57"></div>
+            <div class="terminal-dot" style="background:#febc2e"></div>
+            <div class="terminal-dot" style="background:#28c840"></div>
+            <span style="font-family:var(--mono);font-size:0.68rem;color:var(--text3);margin-left:8px">publiceye@kw:~$</span>
+        </div>
+        <div class="terminal-body"><span class="ta">$</span> <span class="tw">python3 publiceye.py -t example.com -m full</span>
+
+<span class="ta">    ____        __    ___      ______</span>
+<span class="ta">   / __ \__  __/ /_  / (_)____/ ____/_  _____</span>
+<span class="ta">  / /_/ / / / / __ \/ / / ___/ __/ / / / / _ \</span>
+<span class="ta"> / ____/ /_/ / /_/ / / / /__/ /___/ /_/ /  __/</span>
+<span class="ta">/_/    \__,_/_.___/_/_/\___/_____/\__, /\___/</span>
+<span class="ta">                                 /____/</span>
+    Open Source Intelligence Framework  v2.0
+
+<span class="tw">============================================================</span>
+  <span class="tc">[INFO]</span> Domain Intelligence: example.com
+  <span class="tw">[DATA]</span> DNS A: 93.184.216.34
+  <span class="tw">[DATA]</span> DNS MX: 0 .
+  <span class="tw">[DATA]</span> WHOIS Registrar: RESERVED-Internet Assigned Numbers Authority
+  <span class="tw">[DATA]</span> HTTP Server: ECS (dcb/7F3C)
+  <span class="tg">[PASS]</span> Security Headers Score: 71% (5/7)
+
+<span class="tw">============================================================</span>
+  <span class="tc">[INFO]</span> SSL/TLS Analysis: example.com:443
+  <span class="tw">[DATA]</span> Subject: www.example.org
+  <span class="tw">[DATA]</span> Issuer: DigiCert Inc (DigiCert Global G2 TLS RSA SHA256 2020 CA1)
+  <span class="tw">[DATA]</span> Protocol: TLSv1.3 | Cipher: TLS_AES_256_GCM_SHA384
+  <span class="tg">[PASS]</span> Certificate expires in 287 days
+
+<span class="tw">============================================================</span>
+  <span class="tc">[INFO]</span> Subdomain Enumeration: example.com
+  <span class="tw">[DATA]</span> Certificate Transparency: 4 subdomains
+  <span class="tg">[PASS]</span> Total subdomains discovered: 6
+
+<span class="tw">============================================================</span>
+  PublicEye Scan Complete
+  Target:   example.com
+  Modules:  7
+  Findings: 42
+  Output:   ./publiceye_reports/
+<span class="tw">============================================================</span></div>
+    </div>
+
+    <div class="stats">
+        <div class="stat"><div class="stat-num">826</div><div class="stat-label">Lines of Code</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Modules</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Report Formats</div></div>
+        <div class="stat"><div class="stat-num">0</div><div class="stat-label">Cloud Dependencies</div></div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Intelligence Modules</div>
+        <div class="section-title">8 modules covering the full OSINT attack surface</div>
+        <div class="section-desc">Each module operates independently or as part of a full reconnaissance workflow. All data collection is passive or minimally intrusive. No exploitation capabilities.</div>
+        <div class="mod-grid">
+            <div class="mod"><div class="mod-num">01</div><div class="mod-content"><div class="mod-name">Domain Intelligence</div><div class="mod-desc">DNS records (A, AAAA, MX, NS, TXT, SOA, CNAME, SRV), WHOIS data, HTTP headers, security headers scoring, robots.txt analysis, sitemap enumeration, redirect chain tracking.</div><div class="mod-meta"><span class="mod-tag">DNS</span><span class="mod-tag">WHOIS</span><span class="mod-tag">HTTP</span></div></div></div>
+            <div class="mod"><div class="mod-num">02</div><div class="mod-content"><div class="mod-name">SSL/TLS Analysis</div><div class="mod-desc">Certificate subject, issuer, SAN entries, serial number, validity period, expiry countdown, protocol version, cipher suite, key exchange strength.</div><div class="mod-meta"><span class="mod-tag">x509</span><span class="mod-tag">TLS</span><span class="mod-tag">expiry</span></div></div></div>
+            <div class="mod"><div class="mod-num">03</div><div class="mod-content"><div class="mod-name">Subdomain Enumeration</div><div class="mod-desc">Passive discovery via Certificate Transparency logs (crt.sh). Active DNS brute-force with 80+ common subdomain wordlist. Concurrent resolution with configurable thread pool.</div><div class="mod-meta"><span class="mod-tag">CT logs</span><span class="mod-tag">DNS brute</span><span class="mod-tag">threaded</span></div></div></div>
+            <div class="mod"><div class="mod-num">04</div><div class="mod-content"><div class="mod-name">IP Intelligence</div><div class="mod-desc">IPv4/IPv6 classification, reverse DNS, geolocation (country, region, city, coordinates), ISP identification, organization, ASN lookup, private/global/multicast detection.</div><div class="mod-meta"><span class="mod-tag">GeoIP</span><span class="mod-tag">ASN</span><span class="mod-tag">rDNS</span></div></div></div>
+            <div class="mod"><div class="mod-num">05</div><div class="mod-content"><div class="mod-name">Email Intelligence</div><div class="mod-desc">MX record enumeration, email provider identification (Google, Microsoft, ProtonMail, Zoho), SPF/DMARC/DKIM validation, DKIM selector discovery (10 common selectors).</div><div class="mod-meta"><span class="mod-tag">MX</span><span class="mod-tag">SPF</span><span class="mod-tag">DMARC</span><span class="mod-tag">DKIM</span></div></div></div>
+            <div class="mod"><div class="mod-num">06</div><div class="mod-content"><div class="mod-name">Technology Fingerprinting</div><div class="mod-desc">Detection of 24+ technologies: CMS (WordPress, Drupal, Joomla, Shopify), frameworks (React, Angular, Vue), CDN (Cloudflare, AWS), analytics, CAPTCHA, server software.</div><div class="mod-meta"><span class="mod-tag">CMS</span><span class="mod-tag">frameworks</span><span class="mod-tag">CDN</span></div></div></div>
+            <div class="mod"><div class="mod-num">07</div><div class="mod-content"><div class="mod-name">Port Scanner</div><div class="mod-desc">Lightweight TCP connect scanner for 23 common service ports. Concurrent scanning with configurable thread pool and timeout. Service identification (SSH, HTTP, SMB, RDP, databases).</div><div class="mod-meta"><span class="mod-tag">TCP</span><span class="mod-tag">23 ports</span><span class="mod-tag">threaded</span></div></div></div>
+            <div class="mod"><div class="mod-num">08</div><div class="mod-content"><div class="mod-name">Social Media Discovery</div><div class="mod-desc">Username enumeration across 15 platforms: GitHub, Twitter/X, Instagram, LinkedIn, Reddit, TikTok, YouTube, Pinterest, Medium, Twitch, Keybase, HackerOne, Bugcrowd, Dev.to, Mastodon.</div><div class="mod-meta"><span class="mod-tag">15 platforms</span><span class="mod-tag">threaded</span></div></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Deployment</div>
+        <div class="section-title">On-premises installation — zero cloud dependencies</div>
+        <div class="section-desc">PublicEye runs entirely on your infrastructure. No data leaves your environment. No API keys required for core functionality. Optional integrations available for extended capabilities.</div>
+        <div class="code"><span class="c"># Install</span>
+<span class="k">git clone https://github.com/SiteQ8/PublicEye.git</span>
+<span class="k">cd PublicEye</span>
+<span class="k">pip install -r requirements.txt</span>
+
+<span class="c"># Full scan on a domain</span>
+<span class="k">python3 publiceye.py -t example.com -m full</span>
+
+<span class="c"># Single module</span>
+<span class="k">python3 publiceye.py -t example.com -m ssl</span>
+
+<span class="c"># Multiple modules</span>
+<span class="k">python3 publiceye.py -t example.com -m domain,ssl,subdomains</span>
+
+<span class="c"># IP reconnaissance</span>
+<span class="k">python3 publiceye.py -t 8.8.8.8 -m ip</span>
+
+<span class="c"># Social media username check</span>
+<span class="k">python3 publiceye.py -t johndoe -m social</span>
+
+<span class="c"># HTML report output</span>
+<span class="k">python3 publiceye.py -t example.com -m full -o html</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Comparison</div>
+        <div class="section-title">PublicEye vs. commercial alternatives</div>
+        <div class="tbl-wrap">
+        <table>
+            <thead><tr><th>Feature</th><th>PublicEye</th><th>Maltego</th><th>SpiderFoot</th><th>Recon-ng</th></tr></thead>
+            <tbody>
+                <tr><td>Price</td><td style="color:var(--green);font-weight:600">Free / MIT</td><td style="color:var(--text3)">$1,999/yr</td><td style="color:var(--text3)">Free / $800/yr</td><td style="color:var(--green)">Free</td></tr>
+                <tr><td>On-premises deployment</td><td style="color:var(--green)">Yes</td><td style="color:var(--text3)">Partial</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td></tr>
+                <tr><td>Zero API keys required</td><td style="color:var(--green)">Yes (core)</td><td style="color:var(--red)">No</td><td style="color:var(--red)">No</td><td style="color:var(--red)">No</td></tr>
+                <tr><td>Single-file deployment</td><td style="color:var(--green)">Yes (826 lines)</td><td style="color:var(--red)">No</td><td style="color:var(--red)">No</td><td style="color:var(--red)">No</td></tr>
+                <tr><td>JSON/CSV/HTML reports</td><td style="color:var(--green)">All three</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--text3)">CSV only</td></tr>
+                <tr><td>Subdomain enumeration</td><td style="color:var(--green)">CT + DNS brute</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td></tr>
+                <tr><td>Social media discovery</td><td style="color:var(--green)">15 platforms</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--text3)">Limited</td></tr>
+                <tr><td>Technology fingerprinting</td><td style="color:var(--green)">24+ signatures</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--text3)">Limited</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>PublicEye v2.0 — Open Source Intelligence Framework</p>
+    <p>MIT License &nbsp;|&nbsp; <a href="https://github.com/SiteQ8/PublicEye">GitHub</a> &nbsp;|&nbsp; <a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</p>
+    <p style="margin-top:6px">On-premises deployable. Zero cloud dependencies. Enterprise-grade OSINT.</p>
+</div>
+</body>
+</html>
