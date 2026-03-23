@@ -11,7 +11,7 @@
 [![APIs](https://img.shields.io/badge/API_keys-zero-f0a500?style=flat-square)]()
 [![Python](https://img.shields.io/badge/Python-3.8+-f0a500?style=flat-square&logo=python&logoColor=white)]()
 
-**OSINT Intelligence Platform — 20 modules, 13 categories, live APIs, zero backend**
+**OSINT Intelligence Platform**
 
 [Live Platform](https://siteq8.github.io/PublicEye) · [Features](#-live-api-modules) · [Quick Start](#-quick-start) · [Release](https://github.com/SiteQ8/PublicEye/releases/tag/v3.0.0)
 
@@ -21,9 +21,9 @@
 
 ## What is PublicEye
 
-PublicEye is a complete OSINT intelligence platform that runs entirely in your browser. No server, no backend, no API keys required. Every search, every lookup, every scan happens live using real public APIs — results displayed inline, never leaving the platform.
+PublicEye is a full-featured OSINT intelligence platform that performs live scans using real public APIs, with results displayed instantly inline — without redirecting users outside the platform.
 
-Built for analysts, investigators, and security teams who need real-time intelligence without commercial tool budgets or cloud dependencies.
+It’s designed for analysts, investigators, and security teams who require real-time intelligence capabilities.
 
 ---
 
@@ -49,7 +49,7 @@ Built for analysts, investigators, and security teams who need real-time intelli
 
 ## 🔍 Live API Modules
 
-Every result is real data from public APIs — queried in real-time from your browser.
+Every result is real data from public APIs — queried in real-time.
 
 | Module | API Source | What It Does |
 |--------|-----------|--------------|
@@ -99,7 +99,7 @@ Results load inside PublicEye — no external tabs, no context switching.
 
 ## 🚀 Quick Start
 
-### Online (Zero Install)
+### Online
 
 **[https://siteq8.github.io/PublicEye](https://siteq8.github.io/PublicEye)**
 
@@ -123,8 +123,9 @@ python3 publiceye.py -t sans.org -m all -o html
 
 ## Architecture
 
-**Single HTML file (66KB).** No server, no build step, no dependencies.
-
+**Self-contained** — zero server, zero build step, zero dependencies.  
+Secure, client-side architecture with sandboxed execution.  
+🚀 Tier 2 & 3 coming soon: enhanced features, integrations, and advanced security.
 20 sidebar pages organized into 5 sections:
 
 - **Intelligence:** Dashboard, Investigations, IOC Manager
