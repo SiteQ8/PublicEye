@@ -4,200 +4,132 @@
 
 <br>
 
-[![Version](https://img.shields.io/badge/version-2.0-f0a500?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-3.0-f0a500?style=flat-square)]()
 [![License](https://img.shields.io/badge/license-MIT-f0a500?style=flat-square)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-f0a500?style=flat-square&logo=python&logoColor=white)]()
-[![Modules](https://img.shields.io/badge/modules-8-f0a500?style=flat-square)]()
-[![On-Prem](https://img.shields.io/badge/on--prem-deployable-f0a500?style=flat-square)]()
+[![Modules](https://img.shields.io/badge/modules-20-f0a500?style=flat-square)]()
+[![OSINT](https://img.shields.io/badge/categories-13-f0a500?style=flat-square)]()
+[![APIs](https://img.shields.io/badge/API_keys-zero-f0a500?style=flat-square)]()
 
-**Open Source Intelligence framework that rivals commercial alternatives. On-prem deployable. Zero cloud dependencies.**
+**OSINT Intelligence Platform — 20 modules, 13 categories, live APIs, zero backend**
 
-[Quick Start](#quick-start) · [Modules](#modules) · [Usage](#usage) · [Reporting](#reporting) · [vs. Commercial](#publiceye-vs-commercial-alternatives)
+[Live Platform](https://siteq8.github.io/PublicEye) · [Features](#features) · [Modules](#modules) · [Quick Start](#quick-start)
 
 </div>
 
 ---
 
-## Overview
+## What is PublicEye
 
-PublicEye is a Python-based OSINT framework with **8 intelligence modules** in a single 826-line script. It performs domain reconnaissance, SSL/TLS analysis, subdomain enumeration, IP intelligence, email infrastructure analysis, technology fingerprinting, port scanning, and social media discovery — all from your own infrastructure with zero cloud dependencies.
+PublicEye is a complete OSINT intelligence platform that runs entirely in your browser. No server, no backend, no API keys required. Every search, every lookup, every scan happens live using real public APIs — results displayed inline, never leaving the platform.
 
-### Why PublicEye?
+Built for analysts, investigators, and security teams who need real-time intelligence without commercial tool budgets or cloud dependencies.
 
-- **Single-file deployment** — 826 lines of Python. No complex installation.
-- **Zero API keys required** — Core functionality works without any external accounts.
-- **On-premises** — All data stays in your environment. Nothing leaves your network.
-- **Multi-format reporting** — JSON, CSV, and HTML reports generated automatically.
-- **Concurrent execution** — Threaded scanning for subdomain enumeration, port scanning, social discovery.
-- **Passive by default** — Domain, SSL, email, and tech modules use passive techniques only.
+**Login:** `admin` / `Eye@2025`
+
+---
+
+## Features
+
+### Live API Modules (real data, real-time)
+
+| Module | API Source | What It Does |
+|--------|-----------|--------------|
+| DNS Records | dns.google | A, AAAA, MX, NS, TXT, SOA, CNAME, CAA with SPF/DMARC flagging |
+| Subdomains | crt.sh | Certificate Transparency — all unique subdomains from every cert ever issued |
+| IP & Geolocation | ipwho.is | Country, city, ISP, ASN, coordinates with flag emoji |
+| Shodan InternetDB | internetdb.shodan.io | Open ports, hostnames, CPEs, CVEs — no API key needed |
+| Email Security | dns.google | MX, SPF, DMARC, 10 DKIM selectors, STRONG/MODERATE/WEAK score |
+| WHOIS / RDAP | rdap.org | Registration dates, status, nameservers, registrar entities |
+| Crypto Tracker | blockchain.info | Bitcoin balance, TX count, recent transactions with links |
+| Wayback Machine | archive.org | Check archived snapshots, link to full calendar |
+| GitHub Code Search | api.github.com | Repository search with stars, language, description |
+| CertStream | certstream.calidog.io | Real-time WebSocket certificate monitoring with brand filter |
+| Username Probing | Direct HTTP | Probes 20 platforms live, shows LIKELY EXISTS / CHECK MANUALLY |
+
+### Inline Search Modules (results inside PublicEye)
+
+| Module | Method | What It Does |
+|--------|--------|--------------|
+| Telegram OSINT | iframe (TGStat, Lyzem) | Channel/group search with switchable source tabs — inline results |
+| Dark Web Search | iframe (SearX.be) | Dark web references + leak searches displayed inside platform |
+| Social Media Intel | iframe (SearX, Phonebook.cz) | Social media search with 3 source tabs — all inline |
+| Google Dorks | Generator + iframe (SearX.be) | 14 auto-generated dorks with Run ▶ button — executes inline |
+| Phone Lookup | iframe (SearX.be) | Phone number intelligence search displayed inside platform |
+| Email Discovery | iframe (Phonebook.cz) | Email address discovery — inline results |
+| Image OSINT | iframe (SearX.be) | Image intelligence search — inline results |
+
+### Intelligence Features
+
+| Feature | Description |
+|---------|-------------|
+| Dashboard | 5 metrics, OSINT capabilities table, threat level, quick actions |
+| Investigations | Case management with INV IDs, priorities (CRITICAL/HIGH/MEDIUM), IOC counts |
+| IOC Manager | 12 preloaded IOCs (domains, IPs, hashes) — add custom IOCs with type/value/notes |
+| Threat Feeds | 6 intelligence sources: CISA ICS-CERT, AlienVault OTX, URLhaus, PhishTank, MalwareBazaar, FS-ISAC |
+| Reports | 4 export formats: JSON, HTML, CSV, STIX/TAXII |
+| API Keys | 5 optional key slots: Shodan, VirusTotal, Hunter.io, SecurityTrails, AbuseIPDB |
+| Settings | Scan engine config, CertStream config, platform preferences |
 
 ---
 
 ## Quick Start
 
+### Online (Zero Install)
+
+**[https://siteq8.github.io/PublicEye](https://siteq8.github.io/PublicEye)**
+
+Login: `admin` / `Eye@2025`
+
+### Local
+
+```bash
+git clone https://github.com/SiteQ8/PublicEye.git
+open PublicEye/docs/index.html
+```
+
+### CLI (Python)
+
 ```bash
 git clone https://github.com/SiteQ8/PublicEye.git
 cd PublicEye
-pip install -r requirements.txt
-
-# Full scan
-python3 publiceye.py -t example.com -m full
-
-# Single module
-python3 publiceye.py -t example.com -m ssl
-
-# IP reconnaissance
-python3 publiceye.py -t 8.8.8.8 -m ip
-
-# Social media discovery
-python3 publiceye.py -t johndoe -m social
-
-# HTML report
-python3 publiceye.py -t example.com -m full -o html
-```
-
-### Requirements
-
-```
-Python 3.8+
-requests
-dnspython
-python-whois
+pip install requests
+python3 publiceye.py -t sans.org -m all -o html
 ```
 
 ---
 
 ## Modules
 
-| Module | Command | Techniques | Description |
-|--------|---------|-----------|-------------|
-| **Domain Intelligence** | `-m domain` | DNS (8 record types), WHOIS, HTTP headers, security headers scoring, robots.txt, sitemap | Full domain reconnaissance with security posture assessment |
-| **SSL/TLS Analysis** | `-m ssl` | Certificate parsing, protocol detection, cipher analysis, SAN enumeration, expiry check | TLS certificate and protocol security assessment |
-| **Subdomain Enumeration** | `-m subdomains` | Certificate Transparency (crt.sh), DNS brute-force (80+ wordlist), concurrent resolution | Passive and active subdomain discovery |
-| **IP Intelligence** | `-m ip` | Reverse DNS, geolocation, ISP/Org/ASN, IPv4/v6 classification, private/global detection | IP address reconnaissance and attribution |
-| **Email Intelligence** | `-m email` | MX records, provider detection, SPF/DMARC/DKIM validation, DKIM selector discovery | Email infrastructure and authentication analysis |
-| **Tech Fingerprinting** | `-m tech` | 24+ signature patterns for CMS, frameworks, CDN, analytics, CAPTCHA, server software | Web technology stack identification |
-| **Port Scanner** | `-m ports` | TCP connect scan, 23 common ports, concurrent threads, service identification | Lightweight service discovery |
-| **Social Discovery** | `-m social` | 15 platforms (GitHub, X, Instagram, LinkedIn, Reddit, TikTok, YouTube, etc.) | Username existence enumeration |
+### 20 sidebar pages across 5 sections:
 
-### Full Scan Mode
+**Intelligence:** Dashboard, Investigations, IOC Manager
 
-`-m full` automatically selects applicable modules based on target type:
+**Collection:** Domain Recon (8 scan modules), Shodan Intel, Email OSINT, Username Search
 
-| Target Type | Modules Executed |
-|-------------|-----------------|
-| Domain (`example.com`) | domain, ssl, subdomains, ip, email, tech, ports |
-| IP Address (`8.8.8.8`) | ip, ports |
-| Email (`user@example.com`) | email |
-| Username (`johndoe`) | social |
+**Social & Dark Web:** Social Media, Telegram, Dark Web
+
+**Advanced:** Crypto Tracker, Google Dorks, Wayback Machine, Code Search, Image OSINT, Phone Lookup
+
+**Monitoring:** CertStream (live WebSocket), Threat Feeds
+
+**Platform:** API Keys, Settings
 
 ---
 
-## Usage
+## Design
 
-```
-python3 publiceye.py -t TARGET -m MODULE [OPTIONS]
-
-Required:
-  -t, --target    Target (domain, IP, email, username)
-  -m, --module    Module(s) to run (comma-separated, or 'full')
-
-Options:
-  -o, --output    Report format: json, csv, html (default: json)
-  -v, --verbose   Verbose output
-  --threads N     Max concurrent threads (default: 10)
-  --timeout N     Request timeout in seconds (default: 10)
-  --version       Show version
-```
-
-### Examples
-
-```bash
-# Domain reconnaissance
-python3 publiceye.py -t example.com -m domain
-
-# Multiple modules
-python3 publiceye.py -t example.com -m domain,ssl,subdomains
-
-# Full scan with HTML report
-python3 publiceye.py -t example.com -m full -o html
-
-# IP with custom threads
-python3 publiceye.py -t 8.8.8.8 -m ip,ports --threads 20
-
-# Email infrastructure
-python3 publiceye.py -t user@company.com -m email
-
-# Social media
-python3 publiceye.py -t targetuser -m social
-```
-
----
-
-## Reporting
-
-Every scan generates reports in `./publiceye_reports/`:
-
-| Format | Contents | Use Case |
-|--------|----------|----------|
-| **JSON** | Structured data with full metadata | API integration, automation pipelines |
-| **CSV** | Tabular module/key/value format | Spreadsheets, GRC platforms |
-| **HTML** | Visual report with styling | Management review, audit evidence |
-
-HTML reports are generated automatically alongside the primary output format.
-
----
-
-## PublicEye vs. Commercial Alternatives
-
-| Feature | PublicEye | Maltego ($1,999/yr) | SpiderFoot | Recon-ng |
-|---------|-----------|---------------------|------------|----------|
-| Price | **Free (MIT)** | $1,999/yr | Free / $800/yr | Free |
-| On-premises | **Yes** | Partial | Yes | Yes |
-| Zero API keys | **Yes (core)** | No | No | No |
-| Single-file deployment | **Yes** | No | No | No |
-| JSON/CSV/HTML reports | **All three** | Yes | Yes | CSV only |
-| Subdomain enumeration | **CT + DNS brute** | Yes | Yes | Yes |
-| Social media (15 platforms) | **Yes** | Yes | Yes | Limited |
-| Tech fingerprinting (24+) | **Yes** | Yes | Yes | Limited |
-
----
-
-## Security and Ethics
-
-PublicEye is designed for **authorized security assessments only**. All core modules use passive techniques (DNS queries, HTTP requests, certificate parsing, public APIs). The port scanner module performs active TCP connections and should only be used against systems you own or have explicit authorization to test.
-
-- No exploitation capabilities
-- No credential harvesting
-- No brute-force authentication attacks
-- User-Agent clearly identifies PublicEye requests
-- All data stays on your infrastructure
-
----
-
-## Contributing
-
-Contributions welcome:
-
-- New intelligence modules (WHOIS history, dark web monitoring, breach detection)
-- Additional social media platforms
-- Technology fingerprint signatures
-- Pipelining and workflow automation
-- Docker containerization
-- Web UI frontend
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+Single HTML file (66KB). Dark OSINT theme: JetBrains Mono + Outfit fonts. Gold `#F0A500` accent on near-black `#07080A`. CRT scanline overlay. Login screen with demo credentials. Sidebar navigation with section grouping. All results inline — no external tabs.
 
 ---
 
 ## License
 
-MIT License — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
-  <sub>PublicEye — Open Source Intelligence Framework</sub><br>
-  <sub><a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</sub><br>
-  <sub>Enterprise OSINT. On-prem deployable. Zero cloud dependencies.</sub>
+  <sub>PublicEye v3.0 — OSINT Intelligence Platform</sub><br>
+  <sub><a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</sub>
 </div>
