@@ -7,8 +7,6 @@
 [![Version](https://img.shields.io/badge/version-3.0-f0a500?style=flat-square)]()
 [![License](https://img.shields.io/badge/license-MIT-f0a500?style=flat-square)](LICENSE)
 [![Modules](https://img.shields.io/badge/modules-20-f0a500?style=flat-square)]()
-[![OSINT](https://img.shields.io/badge/categories-13-f0a500?style=flat-square)]()
-[![APIs](https://img.shields.io/badge/API_keys-zero-f0a500?style=flat-square)]()
 [![Python](https://img.shields.io/badge/Python-3.8+-f0a500?style=flat-square&logo=python&logoColor=white)]()
 
 **OSINT Intelligence Platform**
