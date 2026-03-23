@@ -1,0 +1,116 @@
+<svg width="800" height="420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" fill="#07080A"/>
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="140" height="420" fill="#0D0F12" stroke="#1E2230" stroke-width="0" />
+  <rect x="139" y="0" width="1" height="420" fill="#1E2230"/>
+  <!-- Sidebar brand -->
+  <circle cx="22" cy="22" r="10" fill="none" stroke="#F0A500" stroke-width="1.5"/>
+  <circle cx="22" cy="22" r="4" fill="#F0A500" opacity="0.3"/>
+  <circle cx="22" cy="22" r="1.8" fill="#F0A500"/>
+  <text x="38" y="26" font-family="monospace" font-size="10" fill="#F0A500" font-weight="800">PublicEye</text>
+  <text x="105" y="26" font-family="monospace" font-size="6" fill="#52525B">v3.0</text>
+  <rect x="0" y="38" width="140" height="1" fill="#1E2230"/>
+  <!-- Sidebar sections -->
+  <text x="12" y="58" font-family="monospace" font-size="5" fill="#52525B" letter-spacing="2">INTELLIGENCE</text>
+  <rect x="5" y="64" width="130" height="20" rx="4" fill="#F0A500" opacity="0.05"/>
+  <text x="22" y="78" font-family="monospace" font-size="8" fill="#F0A500" font-weight="600">Dashboard</text>
+  <text x="22" y="96" font-family="monospace" font-size="8" fill="#52525B">Investigations</text>
+  <text x="120" y="96" font-family="monospace" font-size="5" fill="#F0A500">3</text>
+  <text x="22" y="112" font-family="monospace" font-size="8" fill="#52525B">IOC Manager</text>
+  <text x="120" y="112" font-family="monospace" font-size="5" fill="#F87171">12</text>
+  <text x="12" y="132" font-family="monospace" font-size="5" fill="#52525B" letter-spacing="2">COLLECTION</text>
+  <text x="22" y="148" font-family="monospace" font-size="8" fill="#52525B">Domain Recon</text>
+  <text x="22" y="164" font-family="monospace" font-size="8" fill="#52525B">Shodan Intel</text>
+  <text x="22" y="180" font-family="monospace" font-size="8" fill="#52525B">Email OSINT</text>
+  <text x="22" y="196" font-family="monospace" font-size="8" fill="#52525B">Username Search</text>
+  <text x="12" y="216" font-family="monospace" font-size="5" fill="#52525B" letter-spacing="2">SOCIAL &amp; DARK WEB</text>
+  <text x="22" y="232" font-family="monospace" font-size="8" fill="#52525B">Social Media</text>
+  <text x="22" y="248" font-family="monospace" font-size="8" fill="#52525B">Telegram</text>
+  <text x="22" y="264" font-family="monospace" font-size="8" fill="#52525B">Dark Web</text>
+  <text x="12" y="284" font-family="monospace" font-size="5" fill="#52525B" letter-spacing="2">ADVANCED</text>
+  <text x="22" y="300" font-family="monospace" font-size="8" fill="#52525B">Crypto Tracker</text>
+  <text x="22" y="316" font-family="monospace" font-size="8" fill="#52525B">Google Dorks</text>
+  <text x="22" y="332" font-family="monospace" font-size="8" fill="#52525B">Wayback Machine</text>
+  <text x="22" y="348" font-family="monospace" font-size="8" fill="#52525B">Code Search</text>
+  <text x="12" y="368" font-family="monospace" font-size="5" fill="#52525B" letter-spacing="2">MONITORING</text>
+  <text x="22" y="384" font-family="monospace" font-size="8" fill="#52525B">CertStream</text>
+  <text x="110" y="384" font-family="monospace" font-size="5" fill="#4ADE80">LIVE</text>
+  <text x="22" y="400" font-family="monospace" font-size="8" fill="#52525B">Threat Feeds</text>
+  <!-- Top bar -->
+  <rect x="140" y="0" width="660" height="32" fill="#0D0F12"/>
+  <rect x="140" y="31" width="660" height="1" fill="#1E2230"/>
+  <text x="155" y="21" font-family="system-ui" font-size="11" fill="#E4E4E7" font-weight="700">Dashboard</text>
+  <circle cx="700" cy="16" r="3" fill="#4ADE80"/>
+  <text x="710" y="20" font-family="monospace" font-size="6" fill="#52525B">OSINT INTELLIGENCE PLATFORM</text>
+  <!-- Metric cards -->
+  <rect x="155" y="44" width="120" height="56" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <rect x="155" y="44" width="120" height="2" rx="1" fill="#F0A500"/>
+  <text x="170" y="72" font-family="monospace" font-size="20" fill="#F0A500" font-weight="800">0</text>
+  <text x="170" y="88" font-family="system-ui" font-size="7" fill="#52525B">Scans</text>
+  <rect x="285" y="44" width="120" height="56" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <rect x="285" y="44" width="120" height="2" rx="1" fill="#22D3EE"/>
+  <text x="300" y="72" font-family="monospace" font-size="20" fill="#22D3EE" font-weight="800">0</text>
+  <text x="300" y="88" font-family="system-ui" font-size="7" fill="#52525B">Findings</text>
+  <rect x="415" y="44" width="120" height="56" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <rect x="415" y="44" width="120" height="2" rx="1" fill="#F87171"/>
+  <text x="430" y="72" font-family="monospace" font-size="20" fill="#F87171" font-weight="800">12</text>
+  <text x="430" y="88" font-family="system-ui" font-size="7" fill="#52525B">IOCs</text>
+  <rect x="545" y="44" width="120" height="56" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <rect x="545" y="44" width="120" height="2" rx="1" fill="#4ADE80"/>
+  <text x="560" y="72" font-family="monospace" font-size="20" fill="#4ADE80" font-weight="800">3</text>
+  <text x="560" y="88" font-family="system-ui" font-size="7" fill="#52525B">Cases</text>
+  <rect x="675" y="44" width="110" height="56" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <rect x="675" y="44" width="110" height="2" rx="1" fill="#C084FC"/>
+  <text x="690" y="72" font-family="monospace" font-size="20" fill="#C084FC" font-weight="800">20</text>
+  <text x="690" y="88" font-family="system-ui" font-size="7" fill="#52525B">Modules</text>
+  <!-- Table card -->
+  <rect x="155" y="112" width="430" height="296" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <text x="170" y="132" font-family="monospace" font-size="8" fill="#F0A500" font-weight="700" letter-spacing="0.3">OSINT CAPABILITIES</text>
+  <!-- Table headers -->
+  <rect x="155" y="140" width="430" height="16" fill="#141720"/>
+  <text x="170" y="151" font-family="monospace" font-size="6" fill="#52525B" letter-spacing="0.5">CATEGORY</text>
+  <text x="310" y="151" font-family="monospace" font-size="6" fill="#52525B" letter-spacing="0.5">MODULES</text>
+  <text x="530" y="151" font-family="monospace" font-size="6" fill="#52525B" letter-spacing="0.5">TYPE</text>
+  <!-- Table rows -->
+  <text x="170" y="172" font-family="system-ui" font-size="8" fill="#E4E4E7" font-weight="600">Domain Recon</text>
+  <text x="310" y="172" font-family="system-ui" font-size="7" fill="#A1A1AA">DNS, Subdomains, WHOIS, Headers</text>
+  <rect x="525" y="163" width="45" height="14" rx="3" fill="#4ADE80" opacity="0.1"/><text x="547" y="173" font-family="monospace" font-size="6" fill="#4ADE80" text-anchor="middle">Live API</text>
+  <line x1="170" y1="180" x2="575" y2="180" stroke="#1E2230" stroke-width="0.5"/>
+  <text x="170" y="194" font-family="system-ui" font-size="8" fill="#E4E4E7" font-weight="600">IP Intelligence</text>
+  <text x="310" y="194" font-family="system-ui" font-size="7" fill="#A1A1AA">Geolocation, Shodan, ASN</text>
+  <rect x="525" y="185" width="45" height="14" rx="3" fill="#4ADE80" opacity="0.1"/><text x="547" y="195" font-family="monospace" font-size="6" fill="#4ADE80" text-anchor="middle">Live API</text>
+  <line x1="170" y1="202" x2="575" y2="202" stroke="#1E2230" stroke-width="0.5"/>
+  <text x="170" y="216" font-family="system-ui" font-size="8" fill="#E4E4E7" font-weight="600">Email OSINT</text>
+  <text x="310" y="216" font-family="system-ui" font-size="7" fill="#A1A1AA">SPF, DMARC, DKIM, Breach</text>
+  <rect x="525" y="207" width="45" height="14" rx="3" fill="#4ADE80" opacity="0.1"/><text x="547" y="217" font-family="monospace" font-size="6" fill="#4ADE80" text-anchor="middle">Live API</text>
+  <line x1="170" y1="224" x2="575" y2="224" stroke="#1E2230" stroke-width="0.5"/>
+  <text x="170" y="238" font-family="system-ui" font-size="8" fill="#E4E4E7" font-weight="600">Telegram</text>
+  <text x="310" y="238" font-family="system-ui" font-size="7" fill="#A1A1AA">Channel/group search</text>
+  <rect x="525" y="229" width="45" height="14" rx="3" fill="#60A5FA" opacity="0.1"/><text x="547" y="239" font-family="monospace" font-size="6" fill="#60A5FA" text-anchor="middle">iframe</text>
+  <line x1="170" y1="246" x2="575" y2="246" stroke="#1E2230" stroke-width="0.5"/>
+  <text x="170" y="260" font-family="system-ui" font-size="8" fill="#E4E4E7" font-weight="600">Dark Web</text>
+  <text x="310" y="260" font-family="system-ui" font-size="7" fill="#A1A1AA">Darknet search, leaks</text>
+  <rect x="525" y="251" width="45" height="14" rx="3" fill="#C084FC" opacity="0.1"/><text x="547" y="261" font-family="monospace" font-size="6" fill="#C084FC" text-anchor="middle">SearX</text>
+  <line x1="170" y1="268" x2="575" y2="268" stroke="#1E2230" stroke-width="0.5"/>
+  <text x="170" y="282" font-family="system-ui" font-size="8" fill="#E4E4E7" font-weight="600">Cryptocurrency</text>
+  <text x="310" y="282" font-family="system-ui" font-size="7" fill="#A1A1AA">Bitcoin address tracking</text>
+  <rect x="525" y="273" width="45" height="14" rx="3" fill="#4ADE80" opacity="0.1"/><text x="547" y="283" font-family="monospace" font-size="6" fill="#4ADE80" text-anchor="middle">Live API</text>
+  <!-- Right card: Threat level + Quick actions -->
+  <rect x="598" y="112" width="187" height="100" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <text x="613" y="132" font-family="monospace" font-size="8" fill="#F0A500" font-weight="700">THREAT LEVEL</text>
+  <text x="691" y="168" font-family="monospace" font-size="22" fill="#F0A500" font-weight="800" text-anchor="middle">ELEVATED</text>
+  <text x="691" y="184" font-family="system-ui" font-size="7" fill="#52525B" text-anchor="middle">GCC Financial Sector</text>
+  <!-- Quick actions card -->
+  <rect x="598" y="222" width="187" height="186" rx="6" fill="#1A1D26" stroke="#1E2230" stroke-width="0.8"/>
+  <text x="613" y="242" font-family="monospace" font-size="8" fill="#F0A500" font-weight="700">QUICK ACTIONS</text>
+  <rect x="608" y="252" width="167" height="24" rx="4" fill="#F0A500"/>
+  <text x="691" y="268" font-family="monospace" font-size="8" fill="#000" font-weight="700" text-anchor="middle">⚡ New Scan</text>
+  <rect x="608" y="282" width="167" height="24" rx="4" fill="#1A1D26" stroke="#F0A500" stroke-width="0.8"/>
+  <text x="691" y="298" font-family="monospace" font-size="8" fill="#F0A500" font-weight="600" text-anchor="middle">📡 CertStream</text>
+  <rect x="608" y="312" width="167" height="24" rx="4" fill="#1A1D26" stroke="#22D3EE" stroke-width="0.8"/>
+  <text x="691" y="328" font-family="monospace" font-size="8" fill="#22D3EE" font-weight="600" text-anchor="middle">🔍 Shodan</text>
+  <rect x="608" y="342" width="167" height="24" rx="4" fill="#1A1D26" stroke="#C084FC" stroke-width="0.8"/>
+  <text x="691" y="358" font-family="monospace" font-size="8" fill="#C084FC" font-weight="600" text-anchor="middle">🌐 Dark Web</text>
+  <rect x="608" y="372" width="167" height="24" rx="4" fill="#1A1D26" stroke="#4ADE80" stroke-width="0.8"/>
+  <text x="691" y="388" font-family="monospace" font-size="8" fill="#4ADE80" font-weight="600" text-anchor="middle">₿ Crypto Track</text>
+</svg>

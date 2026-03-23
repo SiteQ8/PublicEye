@@ -1,0 +1,23 @@
+<svg width="600" height="380" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="380" fill="#07080A"/>
+  <radialGradient id="lg" cx="30%" cy="50%" xmlns="http://www.w3.org/2000/svg"><stop offset="0%" stop-color="#F0A500" stop-opacity="0.03"/><stop offset="100%" stop-color="#07080A" stop-opacity="0"/></radialGradient>
+  <rect width="600" height="380" fill="url(#lg)"/>
+  <!-- Card -->
+  <rect x="150" y="40" width="300" height="300" rx="14" fill="#0D0F12" stroke="#1E2230" stroke-width="1"/>
+  <text x="300" y="85" font-family="monospace" font-size="20" fill="#F0A500" font-weight="800" text-anchor="middle" letter-spacing="1">PUBLICEYE</text>
+  <text x="300" y="105" font-family="system-ui" font-size="10" fill="#52525B" text-anchor="middle">OSINT Intelligence Platform v3.0</text>
+  <!-- Fields -->
+  <text x="175" y="140" font-family="monospace" font-size="8" fill="#52525B">Analyst ID</text>
+  <rect x="170" y="148" width="260" height="32" rx="6" fill="#07080A" stroke="#1E2230" stroke-width="1.5"/>
+  <text x="185" y="169" font-family="monospace" font-size="11" fill="#E4E4E7">admin</text>
+  <text x="175" y="200" font-family="monospace" font-size="8" fill="#52525B">Passphrase</text>
+  <rect x="170" y="208" width="260" height="32" rx="6" fill="#07080A" stroke="#1E2230" stroke-width="1.5"/>
+  <text x="185" y="229" font-family="monospace" font-size="11" fill="#52525B">••••••••</text>
+  <!-- Button -->
+  <rect x="170" y="256" width="260" height="34" rx="6" fill="#F0A500"/>
+  <text x="300" y="278" font-family="monospace" font-size="11" fill="#000000" font-weight="700" text-anchor="middle" letter-spacing="0.5">AUTHENTICATE</text>
+  <!-- Demo -->
+  <rect x="170" y="300" width="260" height="28" rx="7" fill="#07080A" stroke="#1E2230" stroke-width="1"/>
+  <text x="185" y="314" font-family="monospace" font-size="6" fill="#F0A500" letter-spacing="0.5">DEMO</text>
+  <text x="220" y="318" font-family="monospace" font-size="9" fill="#A1A1AA">admin / Eye@2025</text>
+</svg>
