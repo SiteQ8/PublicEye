@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/banner.svg" width="100%" alt="PublicEye — OSINT Intelligence Platform"/>
+<img src="docs/screenshots/logo-PEye.png" width="100%" alt="PublicEye — OSINT Intelligence Platform"/>
 
 <br>
 
