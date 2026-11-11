@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-PublicEye — Open Source Intelligence Framework
-Enterprise-grade OSINT platform for security professionals.
+PublicEye: Open Source Intelligence Framework
+OSINT platform for security professionals.
 
 Author: Ali AlEnezi (@SiteQ8)
 License: MIT
@@ -92,7 +92,7 @@ def safe_request(url, timeout=10):
 # MODULE 1: DOMAIN INTELLIGENCE
 # ═══════════════════════════════════════════════════════════════════════
 class DomainIntel:
-    """Comprehensive domain reconnaissance."""
+    """Domain reconnaissance."""
 
     @staticmethod
     def run(target):
