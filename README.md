@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/logo-PEye.png" width="30%" alt="PublicEye — OSINT Intelligence Platform"/>
+<img src="docs/screenshots/logo-PEye.png" width="30%" alt="PublicEye: OSINT Intelligence Platform"/>
 
 <br>
 
@@ -19,7 +19,7 @@
 
 ## What is PublicEye
 
-PublicEye is a full-featured OSINT intelligence platform that performs live scans using real public APIs, with results displayed instantly inline — without redirecting users outside the platform.
+PublicEye is a full-featured OSINT intelligence platform that performs live scans using real public APIs, with results displayed instantly inline, without redirecting users outside the platform.
 
 It’s designed for analysts, investigators, and security teams who require real-time intelligence capabilities.
 
@@ -33,11 +33,11 @@ It’s designed for analysts, investigators, and security teams who require real
 
 <img src="docs/screenshots/login.svg" width="50%" alt="Login"/>
 
-### Dashboard — Intelligence Overview
+### Dashboard: Intelligence Overview
 
 <img src="docs/screenshots/dashboard.svg" width="100%" alt="Dashboard"/>
 
-### Domain Scan — Live Results from sans.org
+### Domain Scan: Live Results from sans.org
 
 <img src="docs/screenshots/scan.svg" width="100%" alt="Scan Results"/>
 
@@ -45,16 +45,16 @@ It’s designed for analysts, investigators, and security teams who require real
 
 ---
 
-## 🔍 Live API Modules
+## Live API Modules
 
-Every result is real data from public APIs — queried in real-time.
+Every result is real data from public APIs, queried in real-time.
 
 | Module | API Source | What It Does |
 |--------|-----------|--------------|
 | **DNS Records** | dns.google | A, AAAA, MX, NS, TXT, SOA, CNAME, CAA with SPF/DMARC flagging |
-| **Subdomains** | crt.sh | Certificate Transparency — all unique subdomains from every cert ever issued |
+| **Subdomains** | crt.sh | Certificate Transparency: all unique subdomains from every cert ever issued |
 | **IP & Geolocation** | ipwho.is | Country, city, ISP, ASN, coordinates with flag emoji |
-| **Shodan InternetDB** | internetdb.shodan.io | Open ports, hostnames, CPEs, CVEs — no API key needed |
+| **Shodan InternetDB** | internetdb.shodan.io | Open ports, hostnames, CPEs, CVEs, no API key needed |
 | **Email Security** | dns.google | MX, SPF, DMARC, 10 DKIM selectors, STRONG/MODERATE/WEAK score |
 | **WHOIS / RDAP** | rdap.org | Registration dates, status, nameservers, registrar entities |
 | **Crypto Tracker** | blockchain.info | Bitcoin balance, TX count, recent transactions with links |
@@ -65,9 +65,9 @@ Every result is real data from public APIs — queried in real-time.
 
 ---
 
-## 🌐 Inline Search Modules
+## Inline Search Modules
 
-Results load inside PublicEye — no external tabs, no context switching.
+Results load inside PublicEye, no external tabs, no context switching.
 
 | Module | Method | What It Does |
 |--------|--------|--------------|
@@ -81,13 +81,13 @@ Results load inside PublicEye — no external tabs, no context switching.
 
 ---
 
-## 🛡️ Intelligence Features
+## Intelligence Features
 
 | Feature | Description |
 |---------|-------------|
 | **Dashboard** | 5 live metrics, OSINT capabilities table, threat level, quick actions |
 | **Investigations** | Case management with INV IDs, priorities, IOC counts |
-| **IOC Manager** | 12 preloaded indicators — add custom IOCs (domain/ip/hash/email/url/cve) |
+| **IOC Manager** | 12 preloaded indicators: add custom IOCs (domain/ip/hash/email/url/cve) |
 | **Threat Feeds** | 6 sources: CISA ICS-CERT, AlienVault OTX, URLhaus, PhishTank, MalwareBazaar, FS-ISAC |
 | **Reports** | JSON, HTML, CSV, STIX/TAXII export formats |
 | **API Keys** | Optional: Shodan, VirusTotal, Hunter.io, SecurityTrails, AbuseIPDB |
@@ -95,7 +95,7 @@ Results load inside PublicEye — no external tabs, no context switching.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Online
 
@@ -121,7 +121,7 @@ python3 publiceye.py -t sans.org -m all -o html
 
 ## Architecture
 
-**Self-contained** — zero server, zero build step, zero dependencies.  
+**Self-contained**, zero server, zero build step, zero dependencies.  
 Secure, client-side architecture with sandboxed execution.  
 🚀 Tier 2 & 3 coming soon: enhanced features, integrations, and advanced security.
 20 sidebar pages organized into 5 sections:
@@ -132,17 +132,17 @@ Secure, client-side architecture with sandboxed execution.
 - **Advanced:** Crypto, Google Dorks, Wayback, Code Search, Image, Phone
 - **Monitoring:** CertStream (live WebSocket), Threat Feeds
 
-**Design:** Dark OSINT theme — JetBrains Mono + Outfit fonts, gold `#F0A500` accent on near-black `#07080A`, CRT scanline overlay, login with demo credentials.
+**Design:** Dark OSINT theme, JetBrains Mono + Outfit fonts, gold `#F0A500` accent on near-black `#07080A`, CRT scanline overlay, login with demo credentials.
 
 ---
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
-  <sub>PublicEye v3.0 — OSINT Intelligence Platform</sub><br>
-  <sub><a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</sub>
+  <sub>PublicEye v3.0, OSINT Intelligence Platform</sub><br>
+  <sub><a href="https://github.com/SiteQ8">@SiteQ8</a>, Ali AlEnezi</sub>
 </div>
